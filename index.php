@@ -6,7 +6,15 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
 <?php
 //!  File Product
- include __DIR__ .('/classes/product.php');
+ include_once __DIR__ .('/classes/product.php');
+ include_once __DIR__ .('/classes/category.php');
+ include_once __DIR__ .('/classes/toy.php');
+
+//! Variabili con i dadi necessari per collegarsi con la class Category
+$cat = new Category ("Cat","https://cdn-icons-png.flaticon.com/512/208/208132.png");
+$dog = new Category ("Dog","https://cdn-icons-png.flaticon.com/512/194/194279.png");
+
+$prodotto = new Toy ('', 'ciotola', $cat, '', 0,10)
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +29,9 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
         <h2>Pet-Shopping</h2>
     </header>
     <main>
-   
+    <p>Nome: <?php echo $prodotto->name ?></p>
+    <p>Categoria: <?php echo $prodotto->category->name ?></p>
+    <p>Peso: <?php echo $prodotto->weight ?></p>
     </main>
     
 </body>

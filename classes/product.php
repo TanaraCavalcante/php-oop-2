@@ -1,7 +1,7 @@
 <!-- I prodotti saranno oltre al cibo, anche giochi, cucce, etc. -->
 
 <?php
- include __DIR__ .('/category.php');
+ include_once __DIR__ .('/category.php');
 
 class Product {
     //! Variabili della stanza: dettagli dei prodotti, come immagine, titolo, prezzo...
@@ -42,7 +42,7 @@ class Product {
     }
 
 }
-
+  
  
 
 
