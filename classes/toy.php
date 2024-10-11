@@ -1,7 +1,6 @@
 <?php
 //!Includo il parent
-
-include __DIR__ .('/product.php');
+include_once __DIR__ .('/product.php');
 
 //! La class Toy figlio di Product, o sia per inserirlo dentro del parent devo usare "extends"
 class Toy extends Product{
@@ -9,7 +8,7 @@ class Toy extends Product{
     public $material;
 
     //!constructor
-    function __construct(string $image, string $name, Category $category, string $description, int $price, int $weight, string $material){
+    function __construct(string $image, string $name, Category $category, string $description, int $price, string $type, string $material){
         parent::__construct($image, $name, $category, $description, $price);
         $this->type = $type;
         $this->material = $material;
@@ -23,4 +22,10 @@ class Toy extends Product{
     function getMaterial(){
         return "$this->material";
     }
+
+    //TODO function del parent "Product"
+    public function getName(){
+        return parent::getName();
+    }
+    
 }

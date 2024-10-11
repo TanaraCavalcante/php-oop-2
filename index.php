@@ -2,7 +2,10 @@
 L'e-commerce vende prodotti per animali.
 I prodotti sono categorizzati, le categorie sono Cani o Gatti.
 I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
-Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
+Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). 
+
+
+string $image, string $name, Category $category, string $description, int $price, int $type, string $material-->
 
 <?php
 //!  File Product
@@ -14,7 +17,7 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 $cat = new Category ("Cat","https://cdn-icons-png.flaticon.com/512/208/208132.png");
 $dog = new Category ("Dog","https://cdn-icons-png.flaticon.com/512/194/194279.png");
 
-$prodotto = new Toy ('', 'ciotola', $cat, '', 0,10)
+$piscina = new Toy ("https://arcaplanet.vtexassets.com/arquivos/ids/270541/pet-around-you-piscina-per-cani.jpg?v=637849240709530000", "Piscina per cane", $dog, "Piscina per cane, con 80cm di diametro.",22, "Gioco", "Plastica");
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +32,7 @@ $prodotto = new Toy ('', 'ciotola', $cat, '', 0,10)
         <h2>Pet-Shopping</h2>
     </header>
     <main>
-    <p>Nome: <?php echo $prodotto->name ?></p>
-    <p>Categoria: <?php echo $prodotto->category->name ?></p>
-    <p>Peso: <?php echo $prodotto->weight ?></p>
+    <h1><?= $piscina -> getName(); ?></h1>
     </main>
     
 </body>
