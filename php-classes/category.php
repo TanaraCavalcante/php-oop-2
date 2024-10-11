@@ -20,5 +20,4 @@ class Category {
     public function getCat(){
         return "$this-> cat";
     }
-
 }
