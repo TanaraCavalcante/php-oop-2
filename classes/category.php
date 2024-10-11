@@ -21,6 +21,12 @@ class Category {
         return "$this-> icon";
     }
 }
+    
+    //! Variabili con i dadi necessari per collegarsi con la class Category
+    $cat = new Category ("Cat","");
+    $dog = new Category ("Dog","");
+
+
 
 
 
