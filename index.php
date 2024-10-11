@@ -5,7 +5,8 @@ I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
 Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
 
 <?php
- include __DIR__ .('/php-classes/category.php');
+//!  File Product
+ include __DIR__ .('/classes/product.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
         <h2>Pet-Shopping</h2>
     </header>
     <main>
+        <?= $message ?>
     </main>
     
 </body>
