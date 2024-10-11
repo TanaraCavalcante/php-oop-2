@@ -1,24 +1,26 @@
 <!-- I prodotti sono categorizzati, le categorie sono Cani o cat. -->
 
 <?php
-//! Creo le variabili della stanza
+//! Creo le variabili della stanza: con name e icona
 class Category {
-    public $dog; //icona?
-    public $cat; //icona?
+    public $name; 
+    public $icon; 
 
     //! Cronstruct
-    function __Contruct(string $dog, string $cat){
-        $this->dog = $dog;
-        $this->cat = $cat;
+    function __Contruct(string $name, string $icon){
+        $this->name = $name;
+        $this->icon = $icon;
     }
 
     //! Method
-    public function getDog(){
-        return "$this-> dog";
+    public function getName(){
+        return "$this-> name";
     }
 
-    public function getCat(){
-        return "$this-> cat";
+    public function getIcon(){
+        return "$this-> icon";
     }
 }
+
+
 
