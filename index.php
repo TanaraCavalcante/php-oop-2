@@ -21,7 +21,7 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
         <h2>Pet-Shopping</h2>
     </header>
     <main>
-        <?= $message ?>
+   
     </main>
     
 </body>
