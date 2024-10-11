@@ -3,16 +3,22 @@
 <?php
 //! Creo le variabili della stanza
 class Category {
-    public $dog;
-    public $cat;
+    public $dog; //icona?
+    public $cat; //icona?
 
     //! Cronstruct
     function __Contruct(string $dog, string $cat){
-        $this->dog = $dog
-        $this->cat = $cat
+        $this->dog = $dog;
+        $this->cat = $cat;
     }
 
-  
+    //! Method
+    public function getDog(){
+        return "$this-> dog";
+    }
 
-    
+    public function getCat(){
+        return "$this-> cat";
+    }
+
 }
