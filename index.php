@@ -1,11 +1,8 @@
 <!-- Immaginare quali sono le classi necessarie per creare uno shop online con le seguenti caratteristiche:
 L'e-commerce vende prodotti per animali.
 I prodotti sono categorizzati, le categorie sono Cani o Gatti.
-I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
-Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). 
-
-
-string $image, string $name, Category $category, string $description, int $price, int $type, string $material-->
+I prodotti saranno oltre al cibo, anche giochi, accessorie, etc.
+Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, accessorie). -->
 
 <?php
 //!  File to include
@@ -13,6 +10,7 @@ string $image, string $name, Category $category, string $description, int $price
  include_once __DIR__ .('/classes/category.php');
  include_once __DIR__ .('/classes/toy.php');
  include_once __DIR__ .('/classes/accessories.php');
+ include_once __DIR__ .('/classes/food.php');
 
 //! Variabili: class Category
 $cat = new Category ("Cat","https://cdn-icons-png.flaticon.com/512/208/208132.png");
@@ -53,6 +51,36 @@ $accessories = [
     $guinzalio,
     $giubotto
 ];
+
+//! Variabili: class Food
+
+$trainer = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/299364/natural-trainer-gatto-sterilised-salmone-10112328--1-.jpg?v=638482560030700000", "Trainer Salmone", $cat, "Natural Trainer gatto sterelised salmone.", 75, 10, "Secco");
+
+$royal = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/287374/_0000_Sterilised.jpg?v=638229355409000000","Royal Cat", $cat, "Royal Canin Cat sterelised alimento completo per gatti sterelizzati.", 80, 10, "Secco");
+
+$whiskas = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/288464/whiskas-multipack-selezione-assortita.jpg?v=638257841639730000","Whiskas Sache", $cat, "Whiskas cat busta multipack 40x85G.", 17, 4, "umido");
+
+$sheba = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/295775/scheba-delicatezze-mare-10138942.jpg?v=638448129556900000","Sheba sache", $cat, "Sheba sauge collection selezione del mare cat busta multipack 40x85G.", 25, 4, "umido" );
+
+$hills = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/300805/Hill-s-Science-Plan-Dog-Large-Adult-al-Pollo-10138879-1.jpg?v=638507737809570000","Hills Dog", $dog, "Hill's science plan dog large adult al pollo.",70, 18, "secco" );
+
+$monge = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/301129/monge-natural-superpremium-light-adult-all-breeds-con-salmone-10078827--1-.jpg?v=638512030383100000","Monge superpremium", $dog, "Monge superpremium light dog adult all breeds con salmone.",50, 12, "secco" );
+
+$virtus = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/266207/virtus-dog-protein-selection-anatra-400g.jpg?v=637755900210570000","Virtus Protein", $dog, "Virtus protein selection dog lattina 400G.", 3, 1, "umido");
+
+$biscroks = new Food ("https://arcaplanet.vtexassets.com/arquivos/ids/257498/35368-Biscrok-500g.jpg?v=637581393571770000","Pedigree Biscroks", $dog, "Pedigree Biscroks biscotti secchi cane biscrock 500g.",3 , 1, "snack");
+
+$foods = [
+    $trainer,
+    $royal,
+    $whiskas,
+    $sheba,
+    $hills,
+    $monge,
+    $virtus,
+    $biscroks
+]
+
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +146,27 @@ $accessories = [
             </div>
         </section>
 
-
+        <!-- Section Foods -->
+        <section>
+            <!-- Titolo -->
+            <h2>Cibo</h2>
+            
+            <!-- Card -->
+             <div id="card">
+                <?php foreach($foods as $singleFood) { ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $singleFood -> getImage(); ?>" class="card-img-top p-3" alt="<?= $singleFood -> getName(); ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $singleFood -> getName(); ?></h5>
+                            <p class="card-text"><?= $singleFood -> getWeight(); ?> Kg</p>
+                            <p class="card-text"><?= $singleFood -> getDescription(); ?></p>
+                            <p class="card-text">Cibo: <?= $singleFood -> getType(); ?></p>
+                            <h6 class="card-text">€ <?= $singleFood -> getPrice(); ?></h6>               
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
     
     </main>
 </body>
