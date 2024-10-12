@@ -24,8 +24,23 @@ class Toy extends Product{
     }
 
     //TODO function del parent "Product"
+    public function getimage(){
+        return parent::getImage();
+    }
+
     public function getName(){
         return parent::getName();
     }
+
+    public function getCategory(){
+        return parent::getCategory();
+    }
+
+    public function getDescription(){
+        return parent::getDescription();
+    }
     
+    public function getPrice(){
+        return parent::getPrice();
+    }
 }
