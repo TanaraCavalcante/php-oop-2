@@ -64,30 +64,36 @@ $accessories = [
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <header>
-        <h2>Pet-Shopping</h2>
+        <img src="img/zampa-logo.png" alt="zampa-logo">
+        <h4>Pet-Shopping</h4>
     </header>
-    <main>
+    <main class="container">
         <!-- Section Toys -->
         <section>
             <!-- Titolo -->
-            <h2>Giochi</h2>
-            
+                <h2>Giochi</h2>
+
             <!-- Card -->
-            <?php foreach($toys as $singleToy) { ?>
-            <div class="card" style="width: 18rem;">
-                <img src="<?= $singleToy -> getImage(); ?>" class="card-img-top" alt="<?= $singleToy -> getName(); ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $singleToy -> getName(); ?></h5>
-                    <p class="card-text"><?= $singleToy -> getType(); ?></p>
-                    <p class="card-text"><?= $singleToy -> getDescription(); ?></p>
-                    <p class="card-text"><?= $singleToy -> getMaterial(); ?></p>
-                    <h6 class="card-text">€ <?= $singleToy -> getPrice(); ?></h6>               
-                </div>
+            <div id="card">
+                <?php foreach($toys as $singleToy) { ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $singleToy -> getImage(); ?>" class="card-img-top" alt="<?= $singleToy -> getName(); ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $singleToy -> getName(); ?></h5>
+                            <p class="card-text"><?= $singleToy -> getType(); ?></p>
+                            <p class="card-text"><?= $singleToy -> getDescription(); ?></p>
+                            <p class="card-text"><?= $singleToy -> getMaterial(); ?></p>
+                            <h6 class="card-text">€ <?= $singleToy -> getPrice(); ?></h6>               
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
-            <?php } ?>
         </section>
 
         <!-- Section Accessories -->
@@ -96,18 +102,20 @@ $accessories = [
             <h2>Accessori</h2>
             
             <!-- Card -->
-            <?php foreach($accessories as $singleAccessorie) { ?>
-            <div class="card" style="width: 18rem;">
-                <img src="<?= $singleAccessorie -> getImage(); ?>" class="card-img-top" alt="<?= $singleAccessorie -> getName(); ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $singleAccessorie -> getName(); ?></h5>
-                    <p class="card-text">Taglia disponibile: <?= $singleAccessorie -> getSize(); ?></p>
-                    <p class="card-text"><?= $singleAccessorie -> getDescription(); ?></p>
-                    <p class="card-text"><?= $singleAccessorie -> getMaterial(); ?></p>
-                    <h6 class="card-text">€ <?= $singleAccessorie -> getPrice(); ?></h6>               
-                </div>
+             <div id="card">
+                <?php foreach($accessories as $singleAccessorie) { ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $singleAccessorie -> getImage(); ?>" class="card-img-top" alt="<?= $singleAccessorie -> getName(); ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $singleAccessorie -> getName(); ?></h5>
+                            <p class="card-text">Taglia disponibile: <?= $singleAccessorie -> getSize(); ?></p>
+                            <p class="card-text"><?= $singleAccessorie -> getDescription(); ?></p>
+                            <p class="card-text"><?= $singleAccessorie -> getMaterial(); ?></p>
+                            <h6 class="card-text">€ <?= $singleAccessorie -> getPrice(); ?></h6>               
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
-            <?php } ?>
         </section>
 
 
