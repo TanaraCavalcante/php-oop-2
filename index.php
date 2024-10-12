@@ -12,6 +12,7 @@ string $image, string $name, Category $category, string $description, int $price
  include_once __DIR__ .('/classes/product.php');
  include_once __DIR__ .('/classes/category.php');
  include_once __DIR__ .('/classes/toy.php');
+ include_once __DIR__ .('/classes/accessories.php');
 
 //! Variabili: class Category
 $cat = new Category ("Cat","https://cdn-icons-png.flaticon.com/512/208/208132.png");
@@ -39,6 +40,19 @@ $toys = [
     $catnip
 ];
 
+//! Variabili: class Accessories
+
+$fonte = new Accessories ("https://arcaplanet.vtexassets.com/arquivos/ids/287159/680.0010.003--1-.jpg?v=638225063308170000", "Fontana Catit", $cat, "Catit fontana 2,5 litri.", 12, "Unica", "Plastica");
+
+$guinzalio = new Accessories ("https://arcaplanet.vtexassets.com/arquivos/ids/276991/camon-parure-gatti-grandi.jpg?v=638041269996500000","Camon Guinzalio", $cat, "Camon Parure per gatti grandi", 9, "Unica", "Tessuto");
+
+$giubotto = new Accessories ("https://arcaplanet.vtexassets.com/arquivos/ids/295403/Impermeabile-con-Imbottitura-per-Bassotto-Rosso-10110001.jpg?v=638439435180600000", "Giubotto impermeabile",$dog, "Impermeabile con imbottittura per bassoto rosso", 15, "S, M, L", "Poliamida e plastica");
+
+$accessories = [
+    $fonte,
+    $guinzalio,
+    $giubotto
+];
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +70,7 @@ $toys = [
         <h2>Pet-Shopping</h2>
     </header>
     <main>
+        <!-- Section Toys -->
         <section>
             <!-- Titolo -->
             <h2>Giochi</h2>
@@ -74,6 +89,27 @@ $toys = [
             </div>
             <?php } ?>
         </section>
+
+        <!-- Section Accessories -->
+        <section>
+            <!-- Titolo -->
+            <h2>Accessori</h2>
+            
+            <!-- Card -->
+            <?php foreach($accessories as $singleAccessorie) { ?>
+            <div class="card" style="width: 18rem;">
+                <img src="<?= $singleAccessorie -> getImage(); ?>" class="card-img-top" alt="<?= $singleAccessorie -> getName(); ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $singleAccessorie -> getName(); ?></h5>
+                    <p class="card-text">Taglia disponibile: <?= $singleAccessorie -> getSize(); ?></p>
+                    <p class="card-text"><?= $singleAccessorie -> getDescription(); ?></p>
+                    <p class="card-text"><?= $singleAccessorie -> getMaterial(); ?></p>
+                    <h6 class="card-text">€ <?= $singleAccessorie -> getPrice(); ?></h6>               
+                </div>
+            </div>
+            <?php } ?>
+        </section>
+
 
     
     </main>
