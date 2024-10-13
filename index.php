@@ -8,9 +8,12 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 //!  File to include
  include_once __DIR__ .('/classes/product.php');
  include_once __DIR__ .('/classes/category.php');
+ //TODO PRODUCTS
  include_once __DIR__ .('/classes/toy.php');
  include_once __DIR__ .('/classes/accessories.php');
  include_once __DIR__ .('/classes/food.php');
+ //TODO TRAIT
+ include_once __DIR__ .('/traits/materiable.php');
 
 //! Variabili: class Category
 $cat = new Category ("Cat","https://cdn-icons-png.flaticon.com/512/208/208132.png");
