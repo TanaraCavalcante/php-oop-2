@@ -5,12 +5,13 @@ include_once __DIR__.('/../traits/materiable.php');
 
 //! La class Accessories figlio di Product, o sia per inserirlo dentro del parent devo usare "extends"
 class Accessories extends Product{
+    //TODO trait
     use Materiable;
 
     public $size;
    
      //!constructor
-     function __construct(string $image, string $name, Category $category, string $description, int $price, string $size, string $material){
+     function __construct(string $image, string $name, Category $category, string $description, $price, string $size, string $material){
         parent::__construct($image, $name, $category, $description, $price);
         $this->size = $size;
     }

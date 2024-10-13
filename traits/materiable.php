@@ -7,3 +7,5 @@ trait Materiable {
         return "$this->material";
     }
 }
+
+?>

@@ -12,7 +12,7 @@ class Product {
     public $price;
     
     //! Construct
-    function __Construct(string $image, string $name, Category $category, string $description, int $price){
+    function __Construct(string $image, string $name, Category $category, string $description,  $price){
         $this -> image = $image;
         $this -> name = $name;
         $this -> category = $category;
@@ -39,6 +39,15 @@ class Product {
 
     public function getPrice(){
         return "$this->price";
+    }
+
+    //TODO EXCEPTION
+    public function setPrice($price){
+        if($price > 0){
+            $this->price = $price;
+        }else {
+            throw new invalidArgumentException("Il prezzo non è valido!");
+        }
     }
 
 }
