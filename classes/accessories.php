@@ -9,12 +9,10 @@ class Accessories extends Product{
 
     public $size;
    
-
      //!constructor
      function __construct(string $image, string $name, Category $category, string $description, int $price, string $size, string $material){
         parent::__construct($image, $name, $category, $description, $price);
         $this->size = $size;
-        
     }
 
     //!Method
